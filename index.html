@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password generate</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-01">
+        <h1>Password Generate</h1>
+        <button>Demo</button>
+      </div>
+      <div class="main-02">
+        <input
+          type="text"
+          placeholder="Strong Password"
+          id="generatePassword"
+        />
+        <i
+          id="eyeOpen"
+          onclick="eyepass(true)"
+          class="fa-solid fa-eye p-show"
+        ></i>
+        <i
+          style="display: none"
+          id="eyeClose"
+          onclick="eyepass(false)"
+          class="fa-solid fa-eye-slash"
+        ></i>
+      </div>
+      <div class="main-03">
+        <p id="weakTag">
+          <i class="fa-solid fa-circle-xmark"></i> Weak Password
+        </p>
+        <p id="strongTag" style="display: none">
+          <i class="fa-solid fa-circle-check" style="color: #1f7a5f"></i> Strong
+          Password
+        </p>
+        <button onclick="copyPassword()">
+          <i id="copyStyle" class="fa-regular fa-copy"></i> Copy
+        </button>
+      </div>
+      <div class="main-04">
+        <input
+          type="range"
+          min="0"
+          max="24"
+          width="100%"
+          value="12"
+          id="totalcharater"
+          onchange="changeCharacterLength()"
+        />
+      </div>
+      <div class="main-05">
+        <p>Character Length:<span id="charaterLength">02</span></p>
+        <div class="conc">
+          <input
+            type="checkbox"
+            id="capitalLetters"
+            value="capitalLetters"
+            checked
+          />
+          <label for="capitalLetters">A-Z</label>
+          <input type="checkbox" id="smalLetters" value="smalLetters" checked />
+          <label for="smalLetters">a-z</label>
+          <input type="checkbox" id="number" value="number" checked />
+          <label for="number">0-9</label>
+          <input
+            type="checkbox"
+            id="specialCharater"
+            value="specialCharater"
+            checked
+          />
+          <label for="specialCharater">@#$</label>
+        </div>
+      </div>
+      <div class="main-06">
+        <button id="btn" onclick="generatePasswordFunc()">
+          Generate Password
+        </button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
